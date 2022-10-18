@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 #include <string>
-#include <fstream>
 #include "Search.h"
 
 using namespace std;
@@ -20,40 +19,48 @@ int main()
 {
 	setlocale(LC_ALL, "ru");
 
-	ofstream File;
-	string stroka;
+	char stroca[1024] = "Hi,my,name-is.Max:What!is?your;name?" ;
+	char stroca_2[1024];
 
-	int strSize = 0;
-	int i = 0;
+	int* arr = new int[10];
+	int* arrt = new int[11];
 
-	File.open("try.txt");
-	File.clear();
-	if (!File.is_open()) {
-		cout << "Not found";
-	}
-	else {
-		string s = "Привет,меня,зовут,Максим,А,как,зовут,тебя,";
-		strSize = s.length();
-		File << s;
-		File.close();
-
-		ifstream Read("try.txt");
-		getline(Read, stroka);
-		Read.close();
-	}
-
-	for (int i = 0; i < strSize; i++)
+	for (size_t i = 0; i < 4; i++)
 	{
-		if (stroka[i] >= 'А' && stroka[i] <= 'Я') {
-			
-		}
-		else if (stroka[i] == ',') {
-			stroka[i] = ' ';
-			
-		}
-		cout << stroka[i];
+
 	}
-	cout << endl << stroka;
+
+	for (size_t i = 0; i < sizeof(stroca); i++)
+	{
+		stroca_2[i] = stroca[i];
+	}
+	
+
+	for (int i = 0; i < sizeof(stroca); i++)
+	{
+		if ( (stroca[i] == '.' or stroca[i] == '!' or stroca[i] == '?') and stroca[i + 1] == '\0') {
+			break;
+		}
+		else if ( (stroca[i + 1] >= 'A' && stroca[i + 1] <= 'Z') and  ((stroca[i] >= '!' && stroca[i] <= '/') or  (stroca[i] >= ':' && stroca[i] <= '?')) and stroca[i + 1] != '\0' and stroca[i + 2] != '\0') {
+			for (size_t j = 0; j <= i; j++)
+			{
+				stroca_2[j] = stroca[j];
+			}
+			
+			stroca_2[i + 1] = ' ';
+			stroca_2[i + 2] = ' ';
+
+			for (size_t j = i + 3; j <= sizeof(stroca); j++)
+			{
+				stroca_2[j] = stroca[j];
+			}
+		}
+		else if ((stroca[i] >= '!' && stroca[i] < '0') or (stroca[i] >= ':' && stroca[i] < 'A')) {
+			stroca[i] = ' ';
+		}
+		cout << stroca_2[i];
+	}
+	cout << endl << stroca_2;
 	
 	return 0;
 }
