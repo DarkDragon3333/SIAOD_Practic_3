@@ -49,7 +49,7 @@ void main()
 
 	cout << endl << stroca; //Выводим чистую первую строку
 
-	for (size_t i = 0; i < sizeof(stroca); i++) //Итерируемся по 
+	for (size_t i = 0; i < sizeof(stroca); i++) //Итерируемся по строке
 	{
 		//Если предыдущие символы не ' ', ' ', '.' и следующий символ заглавная буква то:
 		if (stroca[i + 1] >= 'A' && stroca[i + 1] <= 'Z' && !(stroca_2[i - 2] == '.' && stroca_2[i - 1] == ' ' && stroca_2[i] == ' ')) {

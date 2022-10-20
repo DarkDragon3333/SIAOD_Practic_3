@@ -1,2 +1,3 @@
 https://habr.com/ru/post/307220/ - prefix_function
+https://e-maxx.ru/algo/prefix_function - prefix_function
 https://www.industrialnets.ru/files/misc/ascii.pdf - ASCII
