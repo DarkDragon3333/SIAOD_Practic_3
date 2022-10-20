@@ -1,2 +1,2 @@
-https://habr.com/ru/post/307220/ - про префикс функции
-https://www.industrialnets.ru/files/misc/ascii.pdf - таблица ASCII
+https://habr.com/ru/post/307220/ - prefix_function
+https://www.industrialnets.ru/files/misc/ascii.pdf - ASCII
